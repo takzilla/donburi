@@ -49,4 +49,8 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 
     fmt.Println(m.Content)
+
+    if m.Content == "ping" {
+        s.ChannelMessageSend(m.ChannelID, "pong")
+    }
 }
